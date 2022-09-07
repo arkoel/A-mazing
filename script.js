@@ -1,10 +1,31 @@
-let strmap = "O2 O2 O2 O2 O2 O2 O2 O2 O2 C5 C5 O2 O2 O2 O2 O2 O2 O2 O2 O2 O2 O2 C5 C5 C5 C5 C5 C5 C5 C5 C5 C5 C5 O1 O1 O1 O1 O1 O1 O2 O2 C5 C5 O1 C2 C4 C4 O1 O2 C3 C3 C3 C5 C5 C5 C5 C5 O1 O1 O2 O2 C5 O1 C2 C2 C2 C4 O2 O1 C3 C3 C3 C3 C5 O1 O1 C5 C5 O1 O2 O2 C5 C2 C2 C2 C2 C4 O2 C3 C3 C3 C3 C3 C5 C5 O1 O1 C5 O1 O2 O2 C5 O3 C2 C2 C4 C4 C3 C3 C3 C3 C3 C3 C3 C5 O1 O1 C5 O1 O2 O2 C5 O3 C2 C2 C3 C3 C3 C3 C3 C3 C3 C3 C3 C5 D1 O1 C5 O1 O2 O2 C5 O3 C2 C5 S1 C3 C3 C3 C5 C3 C3 C3 C3 C3 C5 C5 C5 C5 O2 O2 C5 C5 C5 C5 C3 C3 C3 C3 C3 C3 C3 C3 C3 C3 C3 C3 C3 C5 O2 C5 C5 C5 C3 C3 C3 C3 C3 C3 E4 C3 C3 C3 C3 C3 R2 C3 C5 C5 C5 C5 C5 C3 C3 C4 C4 C4 C4 C3 C3 C3 C3 C3 C3 E8 D2 C3 C4 C4 C5 O2 C5 C3 C3 C4 C4 C4 C2 C3 C1 C3 C3 E3 C3 C1 O1 C3 C5 C4 O2 O2 C5 C3 C3 C4 C4 C4 C2 C3 O1 C3 C3 C3 C3 C3 C3 C3 C5 C4 O2 O2 C5 C3 C3 C4 C4 C3 C3 C3 C3 C3 C3 C3 O1 C3 C3 C3 C5 C4 O2 O2 C5 C3 R1 R1 R1 C3 C3 C3 C3 C3 C3 C3 C3 C3 C3 C3 C5 C5 O2 O2 C5 C5 R1 R1 R1 C3 C3 C3 C3 C3 C3 C3 C3 C3 C3 C3 O1 C5 O2 O2 O1 C5 R1 R1 R1 C3 C3 C3 C3 C3 C3 C3 C3 C3 C3 O1 O1 C5 O2 O2 O1 C5 C5 C5 C5 C5 C5 C5 C5 C5 C5 C5 C5 C5 C3 O1 C5 C5 O2 O2 O1 O1 O1 C5 C5 C5 C3 C3 C5 C5 C3 C3 C3 C5 C5 C5 C5 R1 O2 O2 O2 O2 O2 O2 O2 O2 O2 O2 C5 C5 O2 O2 O2 O2 O2 O2 O2 O2 O2"
-var map = strmap.split(" ")
+
+
+
+
+let strmap = "O2	O2	O2	O2	O2	O2	O2	O2	O2	C5	C5	O2	O2	O2	O2	O2	O2	O2	O2	O2\tO2	C2	D1	C4	C4	C2	C4	C3	C3	C5	C3	O1	O1	O1	O1	R1	C5	C5	C5	O2\tO2	C2	C4	C2	C4	C2	C4	C3	C3	C3	C5	C3	O1	O1	R1	R3	O1	D2	C5	O2\tO2	C2	C4	C2	C4	C2	C4	C3	C3	O1	C3	C3	O1	R1	R3	O1	E9	C3	C5	O2\tO2	C4	C2	C4	C2	C4	C4	C3	O1	C3	C5	C5	R2	R3	O1	O1	B2	O1	C5	O2\tO2	C3	C3	C3	C3	C3	C3	C3	C3	C3	C3	C3	O1	O1	O1	O1	C5	C5	C5	O2\tO2	C3	C3	O1	C3	C3	O1	C3	C3	O1	C3	C3	C3	O1	O1	O1	O1	O1	O1	O2\tO2	C3	C3	C3	C3	C3	C3	C3	C3	C3	C3	C3	C3	C3	O1	O1	O1	O1	C3	O2\tO2	C3	C3	C3	O1	C3	C3	C3	O0	C7	C7	O0	C3	C3	C3	C3	C3	C3	C3	O2\tC5	C5	C3	C3	C3	O1	C3	C3	C7	S0	C0	C7	C3	C3	C3	C3	C3	C5	C5	C5\tC5	C3	C5	C5	C3	C3	C3	C3	C7	C0	C0	C7	C3	C3	O1	O1	C3	C5	D4	C5\tO2	C3	C3	C3	C3	C3	C3	C3	O0	C7	C7	O0	C3	C3	O1	C3	C3	C3	C3	O2\tO2	C3	C3	C3	C3	C3	C3	C3	C3	C3	C3	C3	C3	O1	C3	C3	O1	C3	C3	O2\tO2	C5	C3	C3	C3	C3	C3	C3	C3	C3	C3	C3	C3	C3	C3	O3	O1	O1	C3	O2\tO2	C5	C3	O1	O1	C3	O1	C3	C3	C3	C3	C3	C3	C3	O3	O3	O3	C3	C3	O2\tO2	D5	C3	C3	C3	C3	C3	C3	C3	C3	C3	C3	C3	O3	O3	B0	O3	O3	C3	O2\tO2	C5	C3	O1	C3	C3	O1	C3	C3	C3	C3	C3	C3	C3	O3	E7	O3	C3	C3	O2\tO2	C5	C3	C3	O1	C3	C3	O1	C3	C3	C3	C3	C3	O1	O3	C3	O3	D3	C3	O2\tO2	C5	C5	C5	C5	C5	C5	C5	C5	C5	C5	C5	C5	C5	C5	C5	C5	C5	C5	O2\tO2	O2	O2	O2	O2	O2	O2	O2	O2	C5	C5	O2	O2	O2	O2	O2	O2	O2	O2	O2"
+var map = strmap.split("\t")
+console.log(map)
+
+
+
 let div = document.getElementsByClassName("grid-container");
-var colors = ["black","purple","blue","green","yellow","orange","red","gray","white"]
+var ccolors = ["black","purple","blue","green","yellow","orange","red","gray","white"]
+var ocolors = ["fake","darkgreen","lightgray","brown"]
 for(let y = 0;y<20;y++){
     for(let x=0;x<20;x++){
-        div[0].innerHTML += "<div class='grid-item' id='"+x+"-"+y+"' style='background-color: "+colors[map[y*20+x].charAt(1)]+"'>"+map[y*20+x]+"</div>"
+        let color
+        if(map[y*20+x].charAt(0)==="C"){
+            color = ccolors[map[y*20+x].charAt(1)]
+        }else if(map[y*20+x].charAt(0)==="O"){
+            color = ocolors[map[y*20+x].charAt(1)]
+        }else if(map[y*20+x].charAt(0)==="R"){
+            color = "pink"
+        }else if(map[y*20+x].charAt(0)==="E"){
+            color = "gold"
+        }
+
+
+        div[0].innerHTML += "<div class='grid-item' id='"+x+"-"+y+"' style='background-color: "+color+"'>"+map[y*20+x]+"</div>"
     }
 }
 class robot{
@@ -52,7 +73,12 @@ class robot{
             this.pos[0]+=this.dir[0]
             this.pos[1]+=this.dir[1]
             document.getElementById(this.pos[0]+"-"+this.pos[1]).style.backgroundColor = "red"
-        }else{console.log("WALL")}
+        }else{
+            console.log("WALL")
+            let x = this.pos[0]+=this.dir[0]
+            let y = this.pos[1]+=this.dir[1]
+            map[x+y*20] = front
+        }
         this.checktile()
     }
 
@@ -141,16 +167,108 @@ class robot{
     }
 
     runcode(){//plaats hier alle code
-        for(let i =0;i<10;i++){
-            this.stapVooruit()
-        }
-        this.draaiLinks()
-        this.stapVooruit()
-        this.stapAchteruit()
-        this.stapAchteruit()
-        this.stapAchteruit()
-        this.stapVooruit()
+        // this.stapVooruit()
+        // this.stapVooruit()
+        // this.draaiLinks()
+        // for(let i = 0;i<7;i++){
+        //     this.stapVooruit()
+        // }
+        // this.draaiRechts()
+        // for(let i = 0;i<6;i++){
+        //     this.stapVooruit()
+        // }
+
+        // nummer 1
+
+        // this.draaiLinks()
+        // this.draaiLinks()
+        // for(let i = 0;i<4;i++){
+        //     this.stapVooruit()
+        // }
+        // this.draaiLinks()
+        // for(let i = 0;i<9;i++){
+        //     this.stapVooruit()
+        // }
+        // this.draaiLinks()
+        // this.stapVooruit()
+        // this.draaiRechts()
+        // this.stapVooruit()
+        // for(let i = 0;i<9;i++){
+        //     this.stapAchteruit()
+        // }
+        // this.draaiLinks()
+        // for(let i = 0;i<4;i++){
+        //     this.stapVooruit()
+        // }
+        // for(let i = 0;i<2;i++){
+        //     this.draaiRechts()
+        // this.stapVooruit()
+        // this.stapVooruit()
+        // }
+        
+        // this.draaiRechts()
+        // this.stapVooruit()
+        // this.draaiLinks()
+        // this.stapVooruit()
+
+        // nummer 2
+
+        // this.stapVooruit()
+        // this.draaiLinks()
+        // this.stapVooruit()
+        // this.stapVooruit()
+        // for(let i = 0;i<3;i++){
+        //     this.stapAchteruit()
+        //     this.stapVooruit()
+        // }
+        // this.stapAchteruit()
+        // this.stapAchteruit()
+        // this.draaiRechts()
+        // for(let i = 0;i<14;i++){
+        //     this.stapVooruit()
+        // }
+        // this.draaiLinks()
+        // for(let i = 0;i<5;i++){
+        // this.stapVooruit()
+        // }
+        // this.draaiLinks()
+        // this.stapVooruit()
+        // this.stapVooruit()
+        // this.stapAchteruit()
+        // this.stapAchteruit()
+        // this.draaiRechts()
+        // this.stapVooruit()
+        // this.stapVooruit()
+        // this.draaiLinks()
+        // this.stapVooruit()
+
+        // //nummer 3
+        // this.draaiRechts()
+        // this.stapVooruit()
+        // this.draaiLinks()
+        // for(let i = 0;i<8;i++){
+        // this.stapVooruit()
+        // }    
+        // //nummer 4
+
+        // this.draaiLinks()
+        // for(let i = 0;i<11;i++){
+        // this.stapVooruit()
+        // }
+        // this.draaiLinks()
+        // for(let i = 0;i<6;i++){
+        // this.stapVooruit()
+        // }
+        // this.draaiRechts()
+        // for(let i = 0;i<6;i++){
+        //     this.stapVooruit()
+        // }
     }
 
 }
-var robot1 = new robot([5,7] , [1,0])
+
+
+
+
+
+var robot1 = new robot([9,9] , [0,-1])
